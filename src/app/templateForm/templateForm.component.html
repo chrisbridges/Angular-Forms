@@ -10,7 +10,7 @@
       <div class="form-group">
         <label for="time">Time (in years)</label>
         <input type="number" class="form-control" name="time" #time="ngModel" [(ngModel)]="model.time" required>
-        <div class="alert alert-danger" [hidden]="time.valid">Alter Ego is required</div>
+        <div class="alert alert-danger" [hidden]="time.valid">Time is required</div>
       </div>
       <div class="form-group">
         <label for="contributionAmount">Contribution Amount</label>
@@ -22,7 +22,7 @@
         <select class="form-control" name="contributionFrequency" #contributionFrequency="ngModel" [(ngModel)]="model.contributionFrequency" required>
           <option *ngFor="let p of contributionFrequencies" [value]="p">{{ p }}</option>
         </select>
-        <div class="alert alert-danger" [hidden]="contributionFrequency.valid">Power is required</div>
+        <div class="alert alert-danger" [hidden]="contributionFrequency.valid">Contribution Frequency is required</div>
       </div>
       <button type="submit" class="btn btn-default" [disabled]="!heroForm.valid">Submit</button>
     </form>

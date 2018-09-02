@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 //import { ShowError } from './showError.component';
 import { Hero } from '../shared/hero';
+import compoundInterest from '../shared/compoundInterest'
 
 @Component({
   selector: 'template-driven-form',
@@ -11,6 +12,7 @@ export class TemplateFormComponent implements OnInit {
   model: Hero;  
   contributionFrequencies: string[];
   submitted: boolean = false;
+  totalAmount: number
   
   constructor() { }
   
@@ -22,5 +24,7 @@ export class TemplateFormComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
+    // capture values from inputs and process them
+    this.totalAmount = compoundInterest()
   }
 }
