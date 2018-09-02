@@ -3,26 +3,26 @@
     <h1>Compound Interest Calculator</h1>
     <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
       <div class="form-group">
-        <label for="name">Starting Amount</label>
-        <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="model.name" required>
-        <div class="alert alert-danger" [hidden]="name.valid">Name is required</div>
+        <label for="startingAmount">Starting Amount</label>
+        <input type="number" class="form-control" name="startingAmount" #startingAmount="ngModel" [(ngModel)]="model.startingAmount" required>
+        <div class="alert alert-danger" [hidden]="startingAmount.valid">Starting Amount is required</div>
       </div>
       <div class="form-group">
-        <label for="alterEgo">Time (in years)</label>
-        <!-- 
-          Example of what things look like without [(ngModel)]="model.alterEgo" 
-          
-          <input type="text" name="alterEgo" [ngModel]="model.alterEgo" (ngModelChange)="model.alterEgo=$event" required>
-        -->
-        <input type="text" class="form-control" name="alterEgo" #alterEgo="ngModel" [(ngModel)]="model.alterEgo" required>
-        <div class="alert alert-danger" [hidden]="alterEgo.valid">Alter Ego is required</div>
+        <label for="time">Time (in years)</label>
+        <input type="number" class="form-control" name="time" #time="ngModel" [(ngModel)]="model.time" required>
+        <div class="alert alert-danger" [hidden]="time.valid">Alter Ego is required</div>
       </div>
       <div class="form-group">
-        <label for="power">Contribution Frequency</label>
-        <select class="form-control" name="power" #power="ngModel" [(ngModel)]="model.power" required>
-          <option *ngFor="let p of powers" [value]="p">{{ p }}</option>
+        <label for="contributionAmount">Contribution Amount</label>
+        <input type="number" class="form-control" name="contributionAmount" #contributionAmount="ngModel" [(ngModel)]="model.contributionAmount" required>
+        <div class="alert alert-danger" [hidden]="contributionAmount.valid">Contribution Amount is required</div>
+      </div>
+      <div class="form-group">
+        <label for="contributionFrequency">Contribution Frequency</label>
+        <select class="form-control" name="contributionFrequency" #contributionFrequency="ngModel" [(ngModel)]="model.contributionFrequency" required>
+          <option *ngFor="let p of contributionFrequencies" [value]="p">{{ p }}</option>
         </select>
-        <div class="alert alert-danger" [hidden]="power.valid">Power is required</div>
+        <div class="alert alert-danger" [hidden]="contributionFrequency.valid">Power is required</div>
       </div>
       <button type="submit" class="btn btn-default" [disabled]="!heroForm.valid">Submit</button>
     </form>

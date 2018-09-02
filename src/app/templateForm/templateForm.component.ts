@@ -9,16 +9,15 @@ import { Hero } from '../shared/hero';
 })
 export class TemplateFormComponent implements OnInit {
   model: Hero;  
-  powers: string[];
+  contributionFrequencies: string[];
   submitted: boolean = false;
   
   constructor() { }
   
   ngOnInit() {
-      this.model = new Hero(18, 'Tornado', 'Turbulent Breeze', 'Willie Wind');
+      this.model = new Hero(0, 50, 10, 3, 'per day');
 
-      this.powers = ['Really Smart', 'Turbulent Breeze', 
-                     'Super Hot', 'Weather Changer'];
+      this.contributionFrequencies = ['per day', 'per week', 'per month', 'per year'];
   }
 
   onSubmit() {

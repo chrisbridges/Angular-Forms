@@ -14,7 +14,7 @@ export class Hero {
     public time: number,
     public expectedReturn: number,
     public contributionAmount: number,
-    public contributionFrequency: string[]
+    public contributionFrequency: string
   ) {
 
   }
